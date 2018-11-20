@@ -12,7 +12,7 @@ RUN set -ex && \
     echo 'https://mirror.tuna.tsinghua.edu.cn/alpine/v3.8/community' >> /etc/apk/repositories && \
     apk update && apk add --no-cache supervisor nginx
 
-RUN pip install --upgrade pip && pip config set gloabl.index-url https://pypi.tuna.tsinghua.edu.cn/simple && \
+RUN pip install --no-cache-dir pip==18.0 && pip config set gloabl.index-url https://pypi.tuna.tsinghua.edu.cn/simple && \
     pip install --no-cache-dir -i https://pypi.tuna.tsinghua.edu.cn/simple pipenv
 
 
